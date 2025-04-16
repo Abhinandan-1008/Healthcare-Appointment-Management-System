@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - My Schedules</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>My Schedule</h1>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Name</th>
+                            <th>Available Day</th>
+                            <th>Slot Start</th>
+                            <th>Slot End</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="schedule : ${schedules}">
+                            <td th:text="${schedule.doctorId}"></td>
+                            <td th:text="${schedule.nameOfDoctor}"></td>
+                            <td th:text="${schedule.availableDay}"></td>
+                            <td th:text="${schedule.slotStart}"></td>
+                            <td th:text="${schedule.slotEnd}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+                <a href="./" class="link">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

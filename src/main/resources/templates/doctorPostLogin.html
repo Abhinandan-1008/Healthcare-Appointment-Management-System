@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Doctor Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Doctor Dashboard</h1>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-section">
+                    <h2>Patient Management</h2>
+                    <div class="button-group">
+                        <a href="/viewPatientEnterId" class="btn btn-primary">View Patient Profile</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-section">
+                    <h2>Appointment Management</h2>
+                    <div class="button-group">
+                        <a href="/showAppointment" class="btn btn-primary">View My Appointments</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-section">
+                    <h2>Schedule Management</h2>
+                    <div class="button-group">
+                        <a href="/addSchedule" class="btn btn-primary">Add New Schedule</a>
+                        <a href="/viewSchedule" class="btn btn-primary">View My Schedule</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+                <a href="./" class="link">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

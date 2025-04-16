@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Doctor Schedules</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Available Doctor Schedules</h1>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Name</th>
+                            <th>Available Day</th>
+                            <th>Slot Start</th>
+                            <th>Slot End</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="availableDoctorsSchedule : ${availableScheduleList}">
+                            <td th:text="${availableDoctorsSchedule.doctorId}"></td>
+                            <td th:text="${availableDoctorsSchedule.nameOfDoctor}"></td>
+                            <td th:text="${availableDoctorsSchedule.availableDay}"></td>
+                            <td th:text="${availableDoctorsSchedule.slotStart}"></td>
+                            <td th:text="${availableDoctorsSchedule.slotEnd}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h2>Book Appointment</h2>
+                <form action="/bookAppointment" method="post" th:object="${command2}">
+                    <div class="form-group">
+                        <label for="doctorId">Doctor ID</label>
+                        <input type="text" id="doctorId" name="doctorId" th:field="*{doctorId}" required placeholder="Enter doctor ID">
+                        <span class="error" th:if="${#fields.hasErrors('doctorId')}" th:errors="*{doctorId}"></span>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Book Appointment</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+                <a href="./" class="link">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

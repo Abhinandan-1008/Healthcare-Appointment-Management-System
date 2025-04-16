@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - My Appointments</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>My Appointments</h1>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Appointment ID</th>
+                            <th>Patient ID</th>
+                            <th>Patient Name</th>
+                            <th>Slot</th>
+                            <th>Date</th>
+                            <th>Doctor ID</th>
+                            <th>Doctor Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="appointment : ${myAppointmentList}">
+                            <td th:text="${appointment.appointmentId}"></td>
+                            <td th:text="${appointment.patientId}"></td>
+                            <td th:text="${appointment.patientName}"></td>
+                            <td th:text="${appointment.slot}"></td>
+                            <td th:text="${appointment.date}"></td>
+                            <td th:text="${appointment.doctorId}"></td>
+                            <td th:text="${appointment.doctorName}"></td>
+                            <td th:text="${appointment.department}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+                <a href="./" class="link">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

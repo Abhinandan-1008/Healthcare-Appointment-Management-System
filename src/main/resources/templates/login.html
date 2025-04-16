@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .login-container {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        .login-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-header h1 {
+            color: white;
+            margin-bottom: 10px;
+            border-bottom: none;
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        .login-form {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6f2ff 100%);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #d1e7ff;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1e7ff;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .login-button:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .login-footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .login-footer .back-button {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .login-footer .back-button:hover {
+            background: #7f8c8d;
+            transform: translateY(-2px);
+        }
+        
+        .login-footer .link {
+            color: #3498db;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .login-footer .link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            background-color: #fde8e8;
+            color: #e74c3c;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-header">
+                <h1><i class="fas fa-hospital-alt"></i> Healthcare Appointment System</h1>
+                <p>Please login to access your account</p>
+            </div>
+            
+            <div class="login-form">
+                <form action="/validate" method="post">
+                    <div class="form-group">
+                        <label for="user"><i class="fas fa-user"></i> Username</label>
+                        <input type="text" id="user" name="user" required placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="pass" name="pass" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" name="vall" class="login-button"><i class="fas fa-sign-in-alt"></i> Login</button>
+                </form>
+                
+                <div th:if="${message}" class="error-message" th:text="${message}"></div>
+            </div>
+            
+            <div class="login-footer">
+                <button onclick="history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Go Back</button>
+                <a href="./" class="link"><i class="fas fa-home"></i> Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Request Appointment</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Request Appointment</h1>
+            <form action="/generateAppointment" method="post">
+                <div class="form-group">
+                    <label for="appointmentDate">Select Appointment Date</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Request Appointment</button>
+                </div>
+            </form>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

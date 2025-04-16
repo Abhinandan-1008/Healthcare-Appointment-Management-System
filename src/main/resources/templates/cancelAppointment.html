@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Cancel Appointment</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Cancel Appointment</h1>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Appointment ID</th>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Slot</th>
+                            <th>Date</th>
+                            <th>Doctor ID</th>
+                            <th>Doctor's Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="appointment : ${appointmentList}">
+                            <td th:text="${appointment.appointmentId}"></td>
+                            <td th:text="${appointment.patientId}"></td>
+                            <td th:text="${appointment.patientName}"></td>
+                            <td th:text="${appointment.slot}"></td>
+                            <td th:text="${appointment.date}"></td>
+                            <td th:text="${appointment.doctorId}"></td>
+                            <td th:text="${appointment.doctorName}"></td>
+                            <td th:text="${appointment.department}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card" style="margin-top: 20px;">
+                <h2>Cancel Your Appointment</h2>
+                <form action="/deleteAppointment" method="post">
+                    <div class="form-group">
+                        <label for="appointmentId">Appointment ID</label>
+                        <input type="text" id="appointmentId" name="appointmentId" required placeholder="Enter appointment ID to cancel">
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-danger">Cancel Appointment</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

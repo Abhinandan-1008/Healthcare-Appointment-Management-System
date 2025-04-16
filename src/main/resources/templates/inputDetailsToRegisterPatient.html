@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Set Password</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Thank you for Registering</h1>
+            <div class="message-box">
+                <h2 th:text="${message}"></h2>
+                <p>Please keep it for future login purposes.</p>
+            </div>
+            
+            <form action="/registerPatient" method="post">
+                <div class="form-group">
+                    <label for="password">Enter Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Create your password">
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-danger">Reset Form</button>
+                </div>
+            </form>
+            
+            <div class="navigation-links">
+                <a href="./" class="link">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

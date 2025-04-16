@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Add Doctor</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Add New Doctor</h1>
+            <form action="/saveDoctor" method="post">
+                <div class="form-group">
+                    <label for="dName">Doctor Name</label>
+                    <input type="text" id="dName" name="dName" required placeholder="Enter doctor's full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dAge">Doctor Age</label>
+                    <input type="number" id="dAge" name="dAge" required placeholder="Enter doctor's age">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dGender">Gender</label>
+                    <select id="dGender" name="dGender" required>
+                        <option value="">Select gender</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dExperience">Years of Experience</label>
+                    <input type="number" id="dExperience" name="dExperience" required min="0" placeholder="Enter years of experience">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dContact">Contact Number</label>
+                    <input type="tel" id="dContact" name="dContact" required pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dAddress">Address</label>
+                    <input type="text" id="dAddress" name="dAddress" required placeholder="Enter doctor's address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dDepartment">Department</label>
+                    <select id="dDepartment" name="dDepartment" required>
+                        <option value="">Select department</option>
+                        <option value="Cardiologists">Cardiologists</option>
+                        <option value="Dermatologists">Dermatologists</option>
+                        <option value="Neurologists">Neurologists</option>
+                        <option value="Gastroenterologists">Gastroenterologists</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Register Doctor</button>
+                </div>
+            </form>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

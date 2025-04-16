@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System - Add Schedule</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Add New Schedule</h1>
+            
+            <form action="/saveSchedule" method="post">
+                <div class="form-group">
+                    <label for="availableDay">Available Day</label>
+                    <select id="availableDay" name="availableDay" required>
+                        <option value="">Select day</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="slotStart">Start Time</label>
+                    <input type="time" id="slotStart" name="slotStart" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="slotEnd">End Time</label>
+                    <input type="time" id="slotEnd" name="slotEnd" required>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Add Schedule</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form>
+            
+            <div th:if="${message}" class="alert" th:classappend="${messageType == 'success'} ? 'alert-success' : 'alert-danger'" th:text="${message}"></div>
+            
+            <div class="navigation-links">
+                <button onclick="history.back()" class="back-button">Go Back</button>
+                <a href="./" class="link">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
